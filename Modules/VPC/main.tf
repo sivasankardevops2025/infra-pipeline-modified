@@ -10,15 +10,15 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "main" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.subnet_cidr
-  availability_zone = var.availability_zone  
+  availability_zone = var.subnet_availability_zone 
   tags = {
     Name = "${var.env}-subnet"
   }
 }
 
-output "subnet_id" {
+output subnet_id {
 
-  value       =  "aws_subnet.main.id"
+  value       =  aws_subnet.main.id
   description = "descritioin"
   
 }
