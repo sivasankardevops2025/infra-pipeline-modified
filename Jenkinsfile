@@ -5,7 +5,7 @@ pipeline {
         // Note: It is safer to store credentials in Jenkins Credentials Manager 
         // than to hardcode a token at the top of the file.
         ENV = "${env.BRANCH_NAME}"
-        TF_WORKDIR = "environments/${env.BRANCH_NAME}"
+        TF_WORKDIR = "environment/${env.BRANCH_NAME}"
     }
 
     stages {
